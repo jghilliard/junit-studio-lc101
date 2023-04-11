@@ -28,7 +28,7 @@ public class BalancedBrackets {
         for (char ch : str.toCharArray()) {
             if (ch == '[') {
                 openB++;
-            } else if (ch == ']' && openB < closeB) {
+            } else if (ch == ']' && openB > closeB) {
                 closeB++;
             } else {return false;}
         }
