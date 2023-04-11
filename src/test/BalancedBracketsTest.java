@@ -44,5 +44,30 @@ public class BalancedBracketsTest {
         assertFalse(BalancedBrackets.hasBalancedBrackets("]["));
     }
 
+    @Test
+    public void emptyString(){
+        assertTrue(BalancedBrackets.hasBalancedBrackets(""));
+    }
+
+    @Test
+    public void moreClosesThanOPens(){
+        assertFalse(BalancedBrackets.hasBalancedBrackets("[][][]]]"));
+    }
+    @Test
+    public void missingClose(){
+        assertFalse(BalancedBrackets.hasBalancedBrackets("[LaunceCode"));
+    }
+
+    @Test
+    public void missingOpen(){
+        assertFalse(BalancedBrackets.hasBalancedBrackets("LaunceCode]"));
+    }
+
+    @Test
+    public void mixtureOfBrackets(){
+        assertTrue(BalancedBrackets.hasBalancedBrackets("[[{{}}()()(()))]]"));
+    }
+
+
 
 }
